@@ -14,7 +14,7 @@
     );
   }
   // Step 2: Preform Database Query
-  $query = "SELECT * FROM projects";
+  $query = "SELECT * FROM projects WHERE type = 'science'";
   $result = mysqli_query($connection, $query);
   // Check there are no errors with our SQL statement
   if (!$result) {
