@@ -31,12 +31,20 @@
 
   <?php
     // Step 3: Use Returned Data
-    echo "<pre>";
-    while ($row = mysqli_fetch_row($result)) {
-      var_dump($row);
-      echo "<hr>";
-    }
-    echo "</pre>";
+    echo "<table>
+<tr>
+<th>name</th>
+<th>description</th>
+<th>year</th>
+</tr>";
+while($row = mysqli_fetch_array($result)) {
+    echo "<tr>";
+    echo "<td>" . $row['name'] . "</td>";
+    echo "<td>" . $row['description'] . "</td>";
+    echo "<td>" . $row['year'] . "</td>";
+    echo "</tr>";
+}
+echo "</table>";
   ?>
 
   <?php

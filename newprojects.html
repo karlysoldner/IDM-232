@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Rubik">
+    <link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Dosis">
+<style>.container{
+    width: 100%;
+    float: left;
+    border: solid 1px blue;
+    text-align: center;
+}
+.container button{
+    display: inline-block;
+    margin: 50px;
+}
+#btn1{
+    float:left;
+}
+#btn3{
+    float:right;
+} </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type = "text/javascript">
+function myAjax () {
+$.ajax( { type : 'POST',
+          data : { },
+          url  : 'science.php',              // <=== CALL THE PHP FUNCTION HERE.
+          success: function ( data ) {
+            //alert(data) ;      
+            document.getElementById("results").innerHTML = data ;               // <=== VALUE RETURNED FROM FUNCTION.
+          },
+          error: function ( xhr ) {
+            alert( "error" );
+          }
+        });
+}
+
+function myDigitalMedia () {
+$.ajax( { type : 'POST',
+          data : { },
+          url  : 'digitalmedia.php',              // <=== CALL THE PHP FUNCTION HERE.
+          success: function ( data ) {
+            //alert(data) ;      
+            document.getElementById("results").innerHTML = data ;               // <=== VALUE RETURNED FROM FUNCTION.
+          },
+          error: function ( xhr ) {
+            alert( "error" );
+          }
+        });
+}
+    </script>
+
+    <title>Projects</title>
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <header>
+            <div class="flex-parent">
+                <div class="flex-child">
+                    <h1>Karly Soldner</h1>
+                </div>
+
+                <div class="flex-child">
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">About Me</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="resume.html">Resume</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <h1> Projects </h1>
+
+ 
+<div class='container'>
+    <button onclick="myAjax()" id="btn1">Science</button>
+    <button onclick="myDigitalMedia()" id="btn2">Digital Media</button>
+    <button id="btn3">three</button>
+</div>
+<div id="results">
+
+</div>
+ 
+</body>
+
+</html>
