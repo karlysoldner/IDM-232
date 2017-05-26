@@ -36,7 +36,7 @@
  while ($row = mysqli_fetch_assoc($result)) {
        echo "<figure>";
        echo "<img src=\"{$row['image']}\" alt=\"{$row['title']}\" />";
-       echo "<figcaption>{$row['id']}: {$row['title']}</figcaption>";
+       echo "<figcaption> {$row['title']}</figcaption>";
        echo "<p>{$row['name']}</p>";
        echo "<p>{$row['description']}</p>";
        echo "</figure>";
