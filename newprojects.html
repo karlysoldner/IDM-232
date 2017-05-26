@@ -55,6 +55,20 @@ $.ajax( { type : 'POST',
           }
         });
 }
+
+function myOther () {
+$.ajax( { type : 'POST',
+          data : { },
+          url  : 'other.php',              // <=== CALL THE PHP FUNCTION HERE.
+          success: function ( data ) {
+            //alert(data) ;      
+            document.getElementById("results").innerHTML = data ;               // <=== VALUE RETURNED FROM FUNCTION.
+          },
+          error: function ( xhr ) {
+            alert( "error" );
+          }
+        });
+}
     </script>
 
     <title>Projects</title>
@@ -89,7 +103,7 @@ $.ajax( { type : 'POST',
 <div class='container'>
     <button onclick="myAjax()" id="btn1">Science</button>
     <button onclick="myDigitalMedia()" id="btn2">Digital Media</button>
-    <button id="btn3">three</button>
+    <button onclick="myOther()" id="btn3">Other</button>
 </div>
 <div id="results">
 
