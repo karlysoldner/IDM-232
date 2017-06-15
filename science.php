@@ -2,19 +2,19 @@
 
   // Step 1: Create Database Connection
  $host = $_SERVER['HTTP_HOST'];
- if ($host == 'localhost') {
+ //if ($host == 'localhost' ) {
   $dbhost = "localhost";
   $dbuser = "root";
   $dbpass = "root";
   $dbname = "Projects";
-}
-  else {
-  // Remote database credentials
-  $dbhost = "localhost";
-  $dbuser = "karlyso1_Project";
-  $dbpass = "Ratty123";
-  $dbname = "karlyso1_Projects";
-}
+//}
+ // else {
+   //Remote database credentials
+ // $dbhost = "localhost";
+  //$dbuser = "karlyso1_Project";
+  //$dbpass = "Ratty123";
+  //$dbname = "karlyso1_Projects";
+//}
 
   $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
   // Check the connection is good with no errors
@@ -24,8 +24,9 @@
       " (" . mysqli_connect_errno() . ")"
     );
   }
+  $data = $_POST['data'];
   // Step 2: Preform Database Query
-  $query = "SELECT * FROM projects WHERE type = 'science'";
+  $query = "SELECT * FROM projects WHERE type = " . $data;
   $result = mysqli_query($connection, $query);
   // Check there are no errors with our SQL statement
   if (!$result) {
@@ -35,9 +36,11 @@
   // Step 3: Do the thing
  while ($row = mysqli_fetch_assoc($result)) {
        echo "<figure>";
+       echo "<a href={$row['link']}>";
        echo "<img src=\"{$row['image']}\" alt=\"{$row['title']}\" />";
        echo "<figcaption> {$row['title']}</figcaption>";
        echo "<p>{$row['name']}</p>";
+       echo "</a>";
        echo "<p>{$row['description']}</p>";
        echo "</figure>";
        echo "<hr />";

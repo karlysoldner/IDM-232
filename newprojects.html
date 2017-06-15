@@ -10,15 +10,31 @@
     <link rel="stylesheet" type="text/css"
       href="https://fonts.googleapis.com/css?family=Dosis">
 <style>.container{
-    width: 100%;
-    float: left;
-    border: solid 1px blue;
+    width: 90%;
+    float: center;
+    /*border: solid 1px blue;*/
     text-align: center;
+  
 }
 .container button{
-    display: inline-block;
-    margin: 50px;
+            width: 150px;
+            font-family: 'Rubik', sans-serif;
+            font-size: 100%;
+            padding: 10px;
+            cursor: pointer;
+            background: #A3F7B5;
+            color: #30474C;
+            border: 1px solid white;
+            border-radius: 10px;
+            text-decoration: none;
 }
+
+.container button:hover {
+            color: white;
+            background: #40c9a2;
+            border: 1px solid #fff;
+          }
+
 #btn1{
     float:left;
 }
@@ -29,8 +45,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type = "text/javascript">
 function myAjax () {
+  button = event.target.id;
+  if(button == "btn1")
+  {
+    requestType = '\'science\'';
+  }
+  else if( button == "btn2")
+  {
+    requestType = '\'digital media\'';
+  }
+  else if(button == "btn3")
+  {
+    requestType = '\'other\'';
+  }
 $.ajax( { type : 'POST',
-          data : { },
+          data : {data: requestType},
           url  : 'science.php',              // <=== CALL THE PHP FUNCTION HERE.
           success: function ( data ) {
             //alert(data) ;      
@@ -42,33 +71,6 @@ $.ajax( { type : 'POST',
         });
 }
 
-function myDigitalMedia () {
-$.ajax( { type : 'POST',
-          data : { },
-          url  : 'digitalmedia.php',              // <=== CALL THE PHP FUNCTION HERE.
-          success: function ( data ) {
-            //alert(data) ;      
-            document.getElementById("results").innerHTML = data ;               // <=== VALUE RETURNED FROM FUNCTION.
-          },
-          error: function ( xhr ) {
-            alert( "error" );
-          }
-        });
-}
-
-function myOther () {
-$.ajax( { type : 'POST',
-          data : { },
-          url  : 'other.php',              // <=== CALL THE PHP FUNCTION HERE.
-          success: function ( data ) {
-            //alert(data) ;      
-            document.getElementById("results").innerHTML = data ;               // <=== VALUE RETURNED FROM FUNCTION.
-          },
-          error: function ( xhr ) {
-            alert( "error" );
-          }
-        });
-}
     </script>
 
     <title>Projects</title>
@@ -102,8 +104,8 @@ $.ajax( { type : 'POST',
  
 <div class='container'>
     <button onclick="myAjax()" id="btn1">Science</button>
-    <button onclick="myDigitalMedia()" id="btn2">Digital Media</button>
-    <button onclick="myOther()" id="btn3">Other</button>
+    <button onclick="myAjax()" id="btn2">Digital Media</button>
+    <button onclick="myAjax()" id="btn3">Other</button>
 </div>
 <div id="results">
 
