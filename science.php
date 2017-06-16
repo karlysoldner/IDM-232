@@ -3,17 +3,17 @@
   // Step 1: Create Database Connection
  $host = $_SERVER['HTTP_HOST'];
 //($host == 'localhost' ) {
-  //$dbhost = "localhost";
-  //$dbuser = "root";
-  //$dbpass = "root";
-  //$dbname = "Projects";
+ // $dbhost = "localhost";
+//$dbuser = "root";
+ // $dbpass = "root";
+ // $dbname = "Projects";
 //}
 //else {
   //Remote database credentials
- $dbhost = "localhost";
-  $dbuser = "karlyso1_Project";
-  $dbpass = "Ratty123";
-  $dbname = "karlyso1_Projects";
+$dbhost = "localhost";
+$dbuser = "karlyso1_Project";
+ $dbpass = "Ratty123";
+ $dbname = "karlyso1_Projects";
 //}
 
   $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
@@ -42,7 +42,6 @@
        echo "</a>";
        echo "<p>{$row['description']}</p>";
        echo "</figure>";
-       echo "<hr />";
      }
 
 

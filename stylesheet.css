@@ -1,0 +1,276 @@
+* { box-sizing: border-box; }
+
+@font-face {
+    font-family: 'Rubik', sans-serif;
+    src: url('//fonts.googleapis.com/css?family=Rubik:300')
+    }
+@font-face {
+    font-family: 'Dosis', sans-serif;
+    src: url('//fonts.googleapis.com/css?family=Dosis')
+    }    
+
+@font-face {
+  font-family: 'brandico', sans-serif;
+  src: url(//weloveiconfonts.com/api/?family=brandico);
+}
+
+ul{
+  list-style-type: none;
+}
+
+    /* pdf button */
+
+.MyButton {
+            width: 200px;
+            font-family: 'Rubik', sans-serif;
+            font-size: 100%;
+            padding: 10px;
+            cursor: pointer;
+            background: #A3F7B5;
+            color: white;
+            border: 1px solid white;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+.MyButton:hover {
+            color: #30474C;
+            background: #40c9a2;
+            border: 1px solid #fff;
+        }
+
+    /* Social Buttons - they don't work in https which sucks */
+
+/* brandico */
+[class*="brandico-"]:before {
+  font-family: 'brandico', sans-serif;
+}
+
+li.social-button a.brandico-twitter-bird {
+  font-family: brandico;
+  background-color: #71D78A;
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
+  margin: .5rem;
+}
+
+li.social-button a.brandico-facebook {
+  font-family: brandico;
+  background-color:  #8AD770;
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
+  margin: .5rem;
+}
+
+li.social-button a.brandico-instagram {
+  font-family: brandico;
+  background-color: #70D7BD;
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
+  margin: .5rem;
+}
+
+
+li.social-button a.brandico-linkedin {
+  font-family: brandico;
+  background-color: #70BDD6;
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
+  margin: .5rem;
+}
+
+li.social-button:hover {
+    transform: translateY(-10px);
+}
+   /* end social YOU DID IT WOO */  
+
+
+img {  
+  
+  max-width: 100%;
+    height: auto; 
+    }
+
+html {font-size: 100%;}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  color: #30474C;
+  background-color: #f8f8f8;
+}
+
+.row {
+  overflow: auto;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+
+[class*="col-"] {
+  width: 90%;
+    float: center;
+    /*border: solid 1px blue;*/
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  [class*="col-"] {
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+  }
+
+}
+
+a {
+
+  color:#A3F7B5 ;
+}
+
+/*a:visited {
+
+  color: #30474C;
+}*/
+
+a:hover { 
+ 
+  color: #40c9a2;
+ 
+ }
+
+
+ 
+.wrapper {
+  margin: 2rem auto;
+ 
+}
+
+/* php projects */
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container button{
+            width: 150px;
+            font-family: 'Rubik', sans-serif;
+            font-size: 100%;
+            padding: 10px;
+            cursor: pointer;
+            background: #A3F7B5;
+            color: #30474C;
+            border: 1px solid white;
+            border-radius: 10px;
+            text-decoration: none;
+}
+
+.container button:hover {
+            color: white;
+            background: #40c9a2;
+            border: 1px solid #fff;
+          }
+
+figure h3  {
+  margin: 0px;
+}        
+
+
+figure { 
+  flex-basis: 40%; 
+  padding: 10px;
+  margin: 0px;
+  background-color: white;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+ 
+
+  figure a img { margin: 0; }
+
+
+  #results { display: flex;
+   flex-wrap: wrap; 
+   justify-content: space-around;
+   margin-top: 15px;
+ }
+
+@media screen and (max-width: 600px) {
+figure {flex-basis: 100%;}
+}
+
+/*Menu Banner*/
+
+
+
+header {
+  background-color: #40c9a2;
+}
+
+header a:hover { color: white; }
+
+header .flex-parent {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 50rem) {
+  header .flex-parent {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+header .flex-child {
+ margin-left: 1.5rem;
+ margin-right: 1.5rem;
+
+}
+@media screen and (min-width: 50rem) {
+  header .flex-child nav ul li {
+    display: inline;
+  }
+}
+header .flex-child nav ul li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+   padding: .2rem;
+
+}
+
+@media screen and (min-width: 50rem) {
+  header .flex-child nav ul li a {
+    display: inline-block;
+    padding: 1rem;
+    
+  }
+}
